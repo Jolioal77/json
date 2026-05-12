@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON Promise</h1>
+    <p id="name"></p>
+    <script>
+        function mypromise(value) {
+            document.getElementById("name").innerHTML = value;
+        }
+        function promise(a, b) {
+            var promise =a + b;
+            mypromise(promise);
+        }
+        let vari = new Promise (function(myresolve, myreject){
+            let x = 0;
+            if(x==0){
+                myresolve("success");
+            }
+            else{
+                myreject("error");
+            }
+
+        }
+    );
+    vari.then(function(value){
+        promise(4, 85);
+    }, function(error){
+        promise(error);
+    }
+);
+    </script>
+</body>
+</html>
